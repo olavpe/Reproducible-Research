@@ -28,6 +28,8 @@ histogram
 ```{r}
 StepsDaily <- split(activityData$steps,activityData$date)
 	DailySum <- sapply(StepsDaily, sum, na.rm = TRUE)
+```
+```{r fig.width=7, fig.height=6}
 	hist(DailySum, main = "Total number of steps by day",
 	     xlab = "Steps in a day")
 ```
@@ -48,7 +50,7 @@ StepsbyInterval <- split(activityData$steps,activityData$interval)
 ```
 
 This was plotted using the base plotting system.
-```{r}
+```{r fig.width=7, fig.height=6}
 plot(Intervals, IntervalMean, ylab = "Average Steps", 
 		 main = "Average total steps by interval", type = "l")
 ```
@@ -90,6 +92,8 @@ Make a histogram of the total number of steps taken each day
 ```{r}
 NoNAStepsDaily <- split(NoNAData$steps, NoNAData$date)
 NoNADailySum <- sapply(NoNAStepsDaily, sum, na.rm = TRUE)
+```
+```{r fig.width=7, fig.height=6}
 hist(NoNADailySum, main = "Corrected total number of steps by day", 
      xlab = "Steps in a day")
 ```
@@ -127,7 +131,7 @@ FinalData <- aggregate(steps ~ interval + WeekdayIndicator, NoNAData, mean)
 ```
 
 Creating and Saving plots
-```{r}
+```{r fig.width=7, fig.height=6}
 qplot(interval, steps, data = FinalData, type = 'l', geom=c("line"),
       xlab = "Interval", ylab = "Number of steps")+ facet_wrap(~ WeekdayIndicator, ncol = 1)		  
 ```
