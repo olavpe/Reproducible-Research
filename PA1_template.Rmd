@@ -1,8 +1,10 @@
 ---
 output: 
-  html_document:
-    keep_md: true
----
+github_document:
+    fig_width: 5
+    fig_height: 5
+    dev: jpeg
+
 #Reproducibility: Course Project 1 
 
 ###Loading and preprocessing the data
