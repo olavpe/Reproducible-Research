@@ -1,10 +1,14 @@
 ---
 output: 
-github_document:
-    fig_width: 5
-    fig_height: 5
-    dev: jpeg
+  html_document:
+    keep_md: true
 ---
+
+```{r, echo = FALSE}
+knitr::opts_chunk$set(
+  fig.path = "README_figs/README-"
+)
+```
 
 #Reproducibility: Course Project 1 
 
